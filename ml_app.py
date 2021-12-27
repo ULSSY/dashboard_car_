@@ -43,9 +43,10 @@ def run_ml_app() :
     
     # 2-5. 예측한 결과는, 다시 원래대로 복구해 줘야 한다. 
     print(y_pred)
-   
-    # y_pred = scaler_y.inverse_transform(y_pred.reshape(1,1))
-    # print(y_pred)
+    
+    y_pred=y_pred.reshape(-1, 1)
+    y_pred = scaler_y.inverse_transform(y_pred)
+    print(y_pred)
 
     # 3. 예측 결과를 웹 대시보드에 표시한다.
 
